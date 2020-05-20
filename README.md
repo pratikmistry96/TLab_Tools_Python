@@ -1,8 +1,8 @@
-#Tritsch Lab Python Tools
+# Tritsch Lab Python Tools
 
-##Introduction
+## Introduction
 This toolbox is trying to replicate the MATLAB toolbox available at (https://github.com/TritschLab/TLab_Toolbox)
 Currently, I'm trying to transition code and analysis into python
 
-##Disclaimer
+## Disclaimer
 Currently in development and not finished
