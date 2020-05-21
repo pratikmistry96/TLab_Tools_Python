@@ -5,4 +5,4 @@ This toolbox is trying to replicate the MATLAB toolbox available at (https://git
 Currently, I'm trying to transition code and analysis into python
 
 ## Disclaimer
-Currently in development and not finished
+Work in progress
