@@ -1,5 +1,7 @@
 import numpy as np
+from math import floor
 from scipy import signal
+from scipy.interpolate import interp1d
 
 def lpfilt(sig,fs=2000,ord=8,cutoff=10,type='butter'):
     '''
@@ -38,16 +40,20 @@ def baseline(sig,window=10,prc=10,fs=2000):
     *INCOMPLETE*
     '''
     sig_length = np.size(sig)
+    sample_vec = np.arange(1,sig_length+1,1)
     window = window * fs
-    num_chunks = sig_length / window
-    base_pts = np.zeros((num_chunks,1))
+    base_idx = np.arange(1,sig_length+1,1)[::window]
+    num_chunks = np.size(base_idx)
+    base_pts = np.zeros(num_chunks)
     for idx in range(num_chunks):
         if idx == num_chunks - 1:
             chunk = sig[idx*window::]
         else:
             chunk = sig[idx*window:((idx+1)*window)-1]
         base_pts[idx] = np.percentile(chunk,prc)
-    pass
+    base_interp = interp1d(base_idx,base_pts,fill_value = 'extrapolate')
+    base = base_interp(sample_vec)
+    return (sig-base)/base
 
 def digLIA(sig,ref,fs,lpcut=10,ord=8,):
     pass

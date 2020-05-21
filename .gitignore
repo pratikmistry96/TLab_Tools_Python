@@ -1,2 +1,3 @@
 test_script.py
 __pycache__
+*.ipynb
