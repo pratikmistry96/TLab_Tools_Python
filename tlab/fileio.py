@@ -9,6 +9,9 @@ def fileselect():
     root.withdraw()
     return filedialog.askopenfilename()
 
+def dirselect():
+    pass
+
 def readh5(h5file):
     h5data = h5py.File(h5file,'r')
     h5keys = list(h5data.keys())

@@ -3,6 +3,9 @@ from math import floor
 from scipy import signal
 from scipy.interpolate import interp1d
 
+def movmean(sig,window):
+    pass
+
 def lpfilt(sig,fs=2000,ord=8,cutoff=10,type='butter'):
     '''
     Function to easily implement low pass filters.
@@ -37,7 +40,6 @@ def baseline(sig,window=10,prc=10,fs=2000):
     '''
     Function to detrend or baseline signals. The common
     parameters are for baselining photometry signals
-    *INCOMPLETE*
     '''
     sig_length = np.size(sig)
     sample_vec = np.arange(1,sig_length+1,1)
@@ -55,5 +57,11 @@ def baseline(sig,window=10,prc=10,fs=2000):
     base = base_interp(sample_vec)
     return (sig-base)/base
 
-def digLIA(sig,ref,fs,lpcut=10,ord=8,):
+def digLIA(sig,ref,fs,lpcut=10,ord=8):
+    pass
+
+def calcFFT():
+    pass
+
+def phaseplot():
     pass
